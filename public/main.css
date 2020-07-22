@@ -1,0 +1,92 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#keyboard {
+    display: grid;
+    border: 1px solid red;
+    gap: .25em;
+    padding: .25em;
+
+    font-size: 1.5em;
+}
+
+.key-row {
+    display: grid;
+    grid-auto-columns: 1em;
+    grid-auto-flow: column;
+    gap: .25em;
+}
+
+.key {
+    font-size: .55em;
+    font-weight: bold;
+    display: flex;
+    grid-area: span 2 / span 2;
+
+    background-color: rgb(230,230,230);
+    padding: .5em;
+    padding-top: .25em;
+
+    border: 2px solid transparent;
+    border-radius: .25em;
+
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: box-shadow 250ms, background-color 250ms;
+}
+
+.key:hover {
+    border-color: rgba(0, 0, 0, 0.15);
+    background-color: rgb(235, 235, 235);
+    box-shadow: 2px 3px 7px rgba(0,0,0,0.1);
+}
+
+.key.wide {
+    grid-column: span 3;
+}
+.key.extra-wide {
+    grid-column: span 4;
+}
+
+#keys-row1 {
+    height: 1em;
+    margin-bottom: .25em;
+    grid-auto-columns: .735em;
+}
+#keys-row2 {
+    height: 1.5em;
+}
+#keys-row3 {
+    height: 1.5em;
+}
+#keys-row4 {
+    height: 1.5em;
+}
+#keys-row5 {
+    height: 1.5em;
+    grid-auto-rows: .7em;
+    margin-bottom: .15em;
+}
+
+#key-space {
+    grid-column: span 12;
+}
+#arrow-keys {
+    position: relative;
+    display: grid;
+    grid-auto-flow: column;
+    gap: .2em;
+
+    height: 2em;
+    grid-column: span 3;
+}
+#arrow-keys .key {
+    margin-top: 2.125em;
+    height: 1.75em;
+    width: 2em;
+}
+#up-down-arrows .key {
+    height: 1.75em;
+    margin-top: .2em;
+}

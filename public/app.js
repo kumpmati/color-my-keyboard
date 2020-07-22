@@ -1,19 +1,11 @@
 const db = firebase.firestore();
-/*
+
 db.collection('keyboard-colors')
     .doc('current')
     .onSnapshot(function(doc) {
-        console.log(doc.data());
+        const d = doc.data();
+        for(const a of Object.keys(d)) {
+            let el = document.querySelector(`#key-${a}`);
+            if(el) el.style.backgroundColor = `#${d[a].replace("#", "")}`;
+        }
     });
-*/
-db.collection('keyboard-colors')
-    .doc('current')
-    .set({
-        "esc": "fff"
-    });
-
-const setColor = firebase.functions().httpsCallable('setColor');
-/*
-setColor({index: 1, hex: "fafafa"})
-    .then(res => console.log(res));
-*/
