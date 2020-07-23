@@ -1,4 +1,4 @@
-# Color My Keyboard
+# [Color My Keyboard](https://colormykeyboard.xyz)
 A Firebase web app that controls the individual RGB lights on my keyboard.
 
 ## How it works
