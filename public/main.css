@@ -1,16 +1,58 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    
+    --text-color: rgb(192, 204, 209);
+    --bg-color: rgb(36, 39, 43);
+
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+#keyboard-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    min-width: min-content;
+    margin: 0 auto;
 }
 
 #keyboard {
+    font-size: 1.5em;
+    
     display: grid;
     gap: .25em;
-    
-    background-color: rgb(223, 223, 223);
-    padding: .25em;
-    border: 1px solid red;
 
-    font-size: 1.5em;
+    width: min-content;
+    
+    padding: .5em;
+    
+    color: rgba(0,0,0,0.5);
+    background-color: rgb(60,60,60);
+    border-radius: .25em;
+    box-shadow: 3px 5px 8px rgba(0, 0, 0, .4);
+}
+
+#color-picker-div {
+    display: flex;
+    align-items: center;
+}
+
+#color-picker {
+    width: 3em;
+    height: 3em;
+
+    margin: 1em;
+    padding: 0;
+    border: 0;
+    border-radius: 100%;
+    overflow: hidden;
+}
+#color-picker::-webkit-color-swatch-wrapper {
+	padding: 0;
+}
+#color-picker::-webkit-color-swatch {
+	border: none;
 }
 
 .key-row {
@@ -26,22 +68,29 @@ body {
     display: flex;
     grid-area: span 2 / span 2;
 
-    background-color: rgb(230,230,230);
+    background-color: rgb(26, 26, 26);
     padding: .5em;
     padding-top: .25em;
 
     border: 2px solid rgba(0,0,0,0.05);
     border-radius: .25em;
 
+
+    box-shadow: 2px 3px 5px rgba(0,0,0,0.3);
     box-sizing: border-box;
     cursor: pointer;
-    transition: box-shadow 250ms, background-color 250ms;
+    transition: box-shadow 250ms, background-color 50ms, transform 100ms;
+
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
 }
 
 .key:hover {
-    border-color: rgba(0, 0, 0, 0.15);
-    background-color: rgb(235, 235, 235);
+    border-color: rgba(0, 0, 0, 0.219);
+    background-color: rgb(63, 63, 63);
     box-shadow: 2px 3px 7px rgba(0,0,0,0.1);
+    transform: scale(1.05);
 }
 
 .key.wide {
